@@ -12,14 +12,13 @@ class Row:
 # ‘Columns‘ Holds of summaries of columns.
 # Columns are created once, then may appear in multiple slots.
 class Cols:
-    names = []  # all column names
-    all = []  # all the columns (including the skipped ones)
+    all = {}  # all the columns (including the skipped ones)
     klass = None  # the single dependent klass column (if it exists
-    x = []  # independent columns (that are not skipped)
-    y = []  # dependent columns (that are not skipped)
+    x = {}  # independent columns (that are not skipped)
+    y = {}  # dependent columns (that are not skipped)
 
     def __init__(self, names):
-        self.names = names
+        self.names = names # all column names
         # -------unfinished
 
 
@@ -40,9 +39,16 @@ class Num:  # c--col, s--symbol
 class Data:
     def __init__(self, src):
         self.cols = None
-        self.rows = []
+        self.rows = {}
         if type(src) == str:
             csv(src, Row())
+    def add(self,xs,row):
+        if self.cols is None:
+            self.cols = Cols(xs)
+        else:
+            row = push(self.rows,xs.cells and xs or Row(xs))
+            #  for x,y in self.cols.x,self.cols.y:
+
 
 
 # ‘Sym‘s summarize a stream of symbols.
@@ -53,7 +59,8 @@ class Sym:
         self.name = s or "",  # column name
         _has = {}  # kept data
 
-
+def push(t,x):
+    t[len(t)+1] = x
 # Call ‘fun‘ on each row. Row cells are divided in ‘the.seperator‘.
 def csv(filename, fun):
     sep = ','
@@ -63,20 +70,22 @@ def csv(filename, fun):
         if s is None:
             return src.close()
         else:
-            t = []
+            t = {}
             for s1 in s.split(sep):
-                t.append(coerce(s1))
+                t.append(s1)
             fun(t)
 
 
 # to parse data
-def coerce(s, fun):
+def coerce(s):
+    '''
     def fun(s1):  # parse boolean
         if s1 == "true":
             return True
         if s1 == "false":
             return False
         return s1
+    '''
 
     return float(s)  # -----------unfinished. csv.lua line 26
 
@@ -94,4 +103,5 @@ def readline(filename):
 
 
 if __name__ == "__main__":
-    readline(r"C:\Users\Pinxiang Wang\Documents\PythonFileTransfer.csv")
+
+    data = Data(r"C:\Users\Pinxiang Wang\Documents\PythonFileTransfer.csv")
