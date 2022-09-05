@@ -38,7 +38,7 @@ class THE:
         res = r"[-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)"
         m = re.findall(res , help)
         for key , value in m:
-            self.the[key] = value
+            self.the[key] = self.coerce(value)
         
 
     def cli(self , t):
