@@ -39,6 +39,7 @@ class the:
         m = re.findall(res , help)
         for key , value in m:
             self.the[key] = self.coerce(value)
+        return self.the
         
 
     def cli(self , t):

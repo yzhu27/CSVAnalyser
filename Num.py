@@ -31,6 +31,8 @@ class Num:
         self.isSorted = True # no updates since last sort of data
         self.w = 1 # not yet
         
+        THE = the()     
+        self.the = THE.config() 
     
     # line 178 function Num:add(v,    pos)
     def nums(self):
@@ -50,9 +52,9 @@ class Num:
             pos = -1
             
             # line 189: have no idea about what the.nums is, it should be an integer
-            if len(self._has) < the.nums:
+            if len(self._has) < self.the['nums']:
                 pos = 1 + len(self._has)
-            elif random.random() < the.nums/self.n:
+            elif random.random() < self.the.nums/self.n:
                 pos = math.floor(random.random(0, len(self._has)))
             
             if pos > -1:
@@ -72,3 +74,4 @@ class Num:
     # this function returns the median for Nums, or mode for Syms
     def mid(self):
         return per(self.nums(), 0.5)
+
