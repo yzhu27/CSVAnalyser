@@ -9,11 +9,11 @@ def the():
 
 def num(num, mid, div):
     num = Num()
-    for i in range(1, 100): num.add(i)
+    for i in range(1, 101): num.add(i)
     mid = num.mid()
     div = num.div()
     #print(mid, div)
-    assert 50<= mid and mid<= 52 and 30.5 < div and div < 32
+    assert 50 <= mid and mid <= 52 and 30.5 < div and div < 32
 
 def sym(sym, entropy, mode):
     sym = Sym()
@@ -27,7 +27,7 @@ def sym(sym, entropy, mode):
 def bigNum(num):
     num = Num()
     the.num = 32
-    for i in range(1, 100): num.add(i)
+    for i in range(1, 101): num.add(i)
     #util_fun.oo(num.nums())
     assert len(num._has) == 32
 
