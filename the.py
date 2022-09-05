@@ -3,7 +3,7 @@
 import re
 
 
-class THE:
+class the:
     def __init__(self) -> None:
         self.the = {}
         self.help = """CSV : summarized csv file
@@ -46,10 +46,10 @@ class THE:
             v = str(v)
 
 def main():
-    The = THE() 
+    The = the() 
     The.config()
-    the = The.the
-    print(the.items())
+    t = The.the
+    print(t)
     
 
 if __name__ == '__main__':

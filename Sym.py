@@ -1,7 +1,7 @@
 import math
 
 class Sym:
-    def __init__(self,col,name):
+    def __init__(self,col=0,name=""):
         self.n = 0
         self.at = col
         self.name = name
