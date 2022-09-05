@@ -1,12 +1,9 @@
 
 
+def o(d):
+    return str(d).replace(",", "")
 
 
-def o():
-    #TODO:
-    pass
-
-
-def oo():
-    #TODO:
+def oo(d):
+    print(o(d))
     pass
