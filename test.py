@@ -32,8 +32,8 @@ def test_sym():
 
 def test_bigNum():
     num = Num()
-    the.nums = 32
-    for i in range(1, 701): num.add(i)
-    #util_fun.oo(num.nums())
+    num.the["nums"] = 32
+    for i in range(1, 700): num.add(i)
+    util_fun.oo(num.nums())
     assert len(num._has) == 32
 
