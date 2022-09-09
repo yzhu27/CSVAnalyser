@@ -53,7 +53,7 @@ class Num:
             
             # line 189: have no idea about what the.nums is, it should be an integer
             if len(self._has) < self.the['nums']:
-                pos = 1 + len(self._has)
+                pos = len(self._has)
             elif random.random() < self.the['nums']/self.n:
                 pos = math.floor(random.randint(0, len(self._has)))
             
