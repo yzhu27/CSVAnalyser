@@ -55,7 +55,7 @@ class Num:
             if len(self._has) < self.the['nums']:
                 pos = len(self._has)
             elif random.random() < self.the['nums']/self.n:
-                pos = math.floor(random.randint(0, len(self._has)))
+                pos = random.randint(0, len(self._has)-1)
             
             if pos > -1:
                 self.isSorted = False
