@@ -18,6 +18,8 @@ class Col:
             else:
                 self.klass[name] = csv.get_colum_by_index_with_skipped(name)
 
+
+
 class Csv:
     cols = {}
     rows = {}
