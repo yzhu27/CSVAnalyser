@@ -1,12 +1,14 @@
-import util_fun
+from util_fun import o, oo, csv_test
 from Num import Num
 from Sym import Sym
 from the import the
-
+from Data import Data
+from Cols import Cols
+from read_csv import read_csv
 
 
 def test_the():
-    util_fun.oo(the)
+    oo(the)
     assert True
 
 
@@ -27,13 +29,32 @@ def test_sym():
     res={}
     res['mid'] = mode
     res['div'] = entropy
-    util_fun.oo(res)
+    oo(res)
     assert mode == "a" and 1.37 <= entropy and entropy <=1.38
 
 def test_bigNum():
     num = Num()
     num.the["nums"] = 32
     for i in range(1, 700): num.add(i)
-    util_fun.oo(num.nums())
+    oo(num.nums())
     assert len(num._has) == 32
 
+row={}
+
+def test_csv():
+    t=the.config()
+    read_csv(t.file, csv_test(t.row))
+    assert True
+
+def test_data(d):
+    d = Data(the.config().file)
+    for s,c in d.cols.y: oo(c)
+    assert True
+
+def test_stats(data):
+    data = Data(the.config().file)
+    print("xmid", o( data.stats(2, data.cols.x, "mid")))
+    print("xdiv", o( data.stats(3, data.cols.x, "div")))
+    print("ymid", o( data.stats(2, data.cols.y, "mid")))
+    print("ydiv", o( data.stats(3, data.cols.y, "div")))
+    assert True
