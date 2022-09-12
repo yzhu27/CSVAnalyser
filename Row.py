@@ -3,7 +3,7 @@ def copydic(t):
     For dictionary t, return the deep copy of t; otherwise return t.
     """
 
-    if !isinstance(t,dict):
+    if ~isinstance(t,dict):
         return t
     u = {}
     for k in t:
