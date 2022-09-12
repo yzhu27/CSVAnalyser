@@ -5,10 +5,14 @@ class Col:
     x = {}
     y = {}
     klass = {}
+    names_index_mapping = map()
     def __init__(self,csv):
         self.names = csv.titles
         self.all = csv.cols
+        inedx = 0
         for name in self.names:
+            self.names_index_mapping[index] = name
+            index = inedx+1
             if name in csv.cols_skip_index:
                 continue
             elif name[len(name)-1]=='+':
@@ -18,8 +22,25 @@ class Col:
             else:
                 self.klass[name] = csv.get_colum_by_index_with_skipped(name)
 
+class Data:
+    def __init__(self, filename):
+        csv = Csv()
+        csv.read_csv(filename)
+        self.cols = Col(csv)
+        # para1: x or y, # para2: mid or div
+    def stats(self,places,para1,para2):
+        col = self.cols
 
-
+        if para1 == 'x':
+            if para2 == 'mid':
+                return 'x_mid'
+            elif para2 =='div':
+                return 'x_div'
+        elif para1 == 'y':
+            if para2 == 'mid':
+                return 'x_mid'
+            elif para2 == 'div':
+                return 'x_div'
 class Csv:
     cols = {}
     rows = {}
@@ -66,8 +87,6 @@ class Csv:
                 self.cols[t][len(self.cols[t]) + 1] = num
             cur_row = cur_row + 1
             line = file.readline()
-
-
     def col_to_list(self,col_name):
         result = []
         for pair in self.cols[col_name]:
