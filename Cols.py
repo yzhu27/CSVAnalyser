@@ -1,15 +1,40 @@
 from logging import NullHandler
 import copy
 
+from Sym import Sym
+from Num import Num
+
 # line 62
 # add x to t, return x
 def push(t, x):
     t[len(x)] = x
     return x
-
-# following constructor is written by WPX, commented by HJY
 class Cols:
-    def __init__(self, csv):
+    def __init__(self, names):
+        self.names = names
+        self.all = {}
+        self.klass = {}
+        self.x = {}
+        self.y = {}
+        
+        for index, name in enumerate(names):
+            if name.istitle():
+                curCol = push(self.all, Num(index, name))
+            else:
+                curCol = push(self.all, Sym(index, name))    
+            
+            # lenOfName = len(name)
+            if name[-1] != ":":
+                if "+" in name:
+                    push(self.y, curCol)
+                elif "-" in name:
+                    push(self.x, curCol)
+                
+                if name[-1] == ":":
+                    self.klass = name
+   
+    # following constructor is written by WPX, commented by HJY
+    def initTest(self, csv):
         self.names = csv.titles # all column names        
         self.all = csv.cols #all the columns, including the skipped ones
         # notice that the input is no longer names, but a csv file readed in data
