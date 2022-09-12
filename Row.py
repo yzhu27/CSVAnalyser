@@ -1,4 +1,4 @@
-def copy(t):
+def copydic(t):
     """
     For dictionary t, return the deep copy of t; otherwise return t.
     """
@@ -7,7 +7,7 @@ def copy(t):
         return t
     u = {}
     for k in t:
-        u[k] = copy(t[k])
+        u[k] = copydic(t[k])
     return u
 
     
@@ -15,5 +15,5 @@ def copy(t):
 class Row:
     def __init__(self,t={}):
         self.cells = t
-        self.cooked = copy(t)
+        self.cooked = copydic(t)
         self.isEvaled = False
