@@ -2,7 +2,7 @@ import math
 
 from Cols import Cols, push
 from Row import Row
-from read_csv import Csv, csv
+from read_csv import csv
 from Num import Num
 
 def rnd(x,places):
