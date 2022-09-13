@@ -1,22 +1,34 @@
 import copy
 import Cols
 from Row import Row
+# t is the parameter of 'fun'.
 
-'''
+def csv(fname, fun, sep=','):
+    src = open(fname)
+    while True:
+        s = src.readline()
+        s = s[:-1]
+        if s is None:
+            return src.close()
+        else:
+            t = {}
+            for s1 in s.split(sep):
+                t[len(t)] = s1
+            fun(t)
 class Col:
     names = {}
     all = {}
     x = {}
     y = {}
     klass = {}
-    names_index_mapping = map()
+    names_index_mapping = {}
     def __init__(self,csv):
         self.names = csv.titles
         self.all = csv.cols
-        inedx = 0
+        index = 0
         for name in self.names:
             self.names_index_mapping[index] = name
-            index = inedx+1
+            index = index+1
             if name in csv.cols_skip_index:
                 continue
             elif name[len(name)-1]=='+':
@@ -25,9 +37,9 @@ class Col:
                 self.y[name] = csv.get_colum_by_index_with_skipped(name)
             else:
                 self.klass[name] = csv.get_colum_by_index_with_skipped(name)
+
+
 '''
-
-
 class Data:
     def __init__(self, filename):
         csv = Csv()
@@ -49,19 +61,8 @@ class Data:
                 return 'x_mid'
             elif para2 == 'div':
                 return 'x_div'
+'''
 
-# t is the parameter of 'fun'.
-def csv(fname, fun, t, sep=','):
-    src = open(fname)
-    while True:
-        s = src.readline()
-        if s is None:
-            return src.close()
-        else:
-            t = {}
-            for s1 in s.split(sep):
-                t[len[t]] = s1
-            fun(t)
 
 
 class Csv:
@@ -69,29 +70,22 @@ class Csv:
     rows = {}
     cols_skip_index = set()
     row_skip_index = set()
-    titles = ''
 
     def __init__(self):
         cols = {}
         rows = {}
         row_skip_index = set()
 
-    def read_csv(self, filename, fun, t, sep=','):
-        file = open(filename)
-        line = file.readline()
-        fun(t.row)
-        while line:
-            line.strip()
-            strs = line.split(sep)
-            line = file.readline()
-
     def read_csv(self, filename):
         file = open(filename)
         line = file.readline()
+        line = line[:-1]
         self.titles = line.split(',')
         line = file.readline()
+        # delete '\n'
         for string in self.titles:
             self.cols[string] = {}
+        print(self.titles)
         cur_row = 0
         while line:
             line.strip()
@@ -115,7 +109,6 @@ class Csv:
                         self.rows[cur_row].append(num)
                         continue
                 else:
-                    num = strs.pop()
                     self.rows[cur_row].append(e)
                 index = index + 1
                 self.cols[t][len(self.cols[t]) + 1] = num
@@ -147,8 +140,8 @@ class Csv:
 if __name__ == "__main__":
     csv = Csv()
     csv.read_csv(r"C:\Users\Pinxiang Wang\Documents\PythonFileTransfer.csv")
-    col = Cols(csv)
-
+    col = Col(csv)
+    print(csv.titles)
     print('Elements in cols Clndrs: ', csv.cols['Clndrs'])  # select one col by col name(title)
     print(csv.cols['origin'][20])  # select specific element by col name and row number
     print(csv.cols['Hp:'])  # col name end with ':'--colon mark will have no element

@@ -9,27 +9,31 @@ def rnd(x,places):
     return math.floor(x * mult +0.5)/mult
 
 class Data:
-    def add(self,xs,row):
+    def add(self,xs):
         if self.cols == None:
-            self.cols = Cols(xs)
+            value_list = list(xs.values())
+            self.cols = Cols(value_list)
         else:
-            row = push(self.rows, xs.cells and xs or Row(xs))
-            for _,todo in enumerate(self.cols.x,self.cols.y):
-                for _,col in enumerate(todo):
+            row = Row(xs)
+            row = push(self.rows,row)
+            # need to be fixed
+            for _, todo in enumerate([self.cols.x,self.cols.y]):
+                print(type(todo))
+                for _, col in enumerate(todo):
                     col.add(row.cells[col.at])
 
-    # 't' is not in the lua code, but not sure where to find the 'row' parameter.
-    def __init__(self, src,t):
+    #  not sure where to find the 'row' parameter.
+    def __init__(self, src):
         self.cols = None
         self.rows = {}
         if type(src)==type('string'):
-            csv(fname=src,fun=self.add(),t=t.row)
+            csv(src,lambda row:self.add(row))
         else:
             for _,row in enumerate(src or {}):
                 self.add(row)
 
 
-    def stats(self,places,showCols, fun, t,v):
+    def stats(self,places,showCols, fun):
         showCols , fun = showCols or self.cols.y, fun or "mid"
         t = {};
         for _, col in enumerate(showCols):
@@ -39,4 +43,7 @@ class Data:
         return  t
 
 if __name__ == '__main__':
-    data = Data("C:\Users\Pinxiang Wang\Documents\PythonFileTransfer.csv",)
+    data = Data(r"C:\Users\Pinxiang Wang\Documents\PythonFileTransfer.csv")
+    print(data.csv_obj.titles)
+    print(data.cols.x)
+    print(data.cols.y)
