@@ -1,7 +1,8 @@
 
 
+import imp
 import re
-
+from util_fun import coerce
 
 
 class the:
@@ -15,28 +16,13 @@ class the:
         OPTIONS:
         -e  --eg        start-up example                      = nothing
         -d  --dump      on test failure, exit with stack dump = false
-        -f  --file      file with csv data                    = ../data/auto93.csv
+        -f  --file      file with csv data                    = ./data/auto93.csv
         -h  --help      show help                             = false
         -n  --nums      number of nums to keep                = 512
         -s  --seed      random number seed                    = 10019
         -S  --seperator feild seperator                       = ,"""
     
-    # Handle Settings
-    #Parse `the` config settings from `help`
-    def coerce(self , s):
-        def fun(s1):
-            if s1 == 'true':
-                return True 
-            if s1 == 'false':
-                return False 
-            return s1.strip()
-        if s.isdigit():
-            return int(s)
-        try:
-            tmp = float(s)
-            return tmp
-        except ValueError:
-            return fun(s)
+
 
     #build the settings object from help
     def config(self):
@@ -45,7 +31,7 @@ class the:
         res = r"[-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)"
         m = re.findall(res , help)
         for key , value in m:
-            self.the[key] = self.coerce(value)
+            self.the[key] = coerce(value)
         return self.the
         
     #Update settings from values on command-line flags. Booleans need no values
@@ -67,7 +53,7 @@ class the:
                         v = 'true'
                     else:
                         v = slots[n+1]
-                    t[slot] = self.coerce(v)
+                    t[slot] = coerce(v)
         #print 'help' after update
         if t['help']:
             print(self.help)

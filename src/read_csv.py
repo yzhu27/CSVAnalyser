@@ -1,20 +1,34 @@
 import copy
 import Cols
 from Row import Row
+from the import the
+from csv import reader
+from util_fun import coerce
 # t is the parameter of 'fun'.
 
-def csv(fname, fun, sep=','):
-    src = open(fname)
-    while True:
-        s = src.readline()
-        s = s[:-1]
-        if s is None:
-            return src.close()
-        else:
-            t = {}
-            for s1 in s.split(sep):
-                t[len(t)] = s1
-            fun(t)
+def csv(fname, fun):
+    sep = the().config()["seperator"]
+    
+    #src = open(fname)
+    with open(fname,'r') as src:
+        rdr = reader(src, delimiter=sep)
+        for l in rdr:
+            d={}
+            for v in l:
+                d[len(d)]=coerce(v)
+            #print(d)
+            fun(d)
+
+    # while True:
+    #     s = src.readline()
+    #     s = s[:-1]
+    #     if s is None:
+    #         return src.close()
+    #     else:
+    #         t = {}
+    #         for s1 in s.split(sep):
+    #             t[len(t)+1] = s1
+    #         fun(t)
 class Col:
     names = {}
     all = {}

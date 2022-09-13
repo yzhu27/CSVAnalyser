@@ -23,7 +23,7 @@ class Num:
     def __init__(self, c=0, s=""):
         self.n = 0 # items seen
         self.at = c # column position
-        self.s = s # column name        
+        self.name = s # column name        
         self._has = {} # dict for keeping data
         
         self.lo = math.inf # lowest seen
@@ -47,8 +47,8 @@ class Num:
     def add(self, v):
         if v != "?":
             self.n = self.n + 1
-            self.lo = min(v, self.lo)
-            self.hi = max(v, self.hi)
+            self.lo = min(float(v), self.lo)
+            self.hi = max(float(v), self.hi)
             pos = -1
             
             # line 189: have no idea about what the.nums is, it should be an integer
@@ -59,7 +59,7 @@ class Num:
             
             if pos > -1:
                 self.isSorted = False
-                self._has[pos] = int(v)
+                self._has[pos] = int(float(v))
     
     
     
@@ -74,4 +74,15 @@ class Num:
     # this function returns the median for Nums, or mode for Syms
     def mid(self):
         return per(self.nums(), 0.5)
+
+    def __str__(self):
+        D={}
+        D["at"]=self.at
+        D["hi"]=self.hi
+        D["isSorted"]=self.isSorted
+        D["lo"]=self.lo
+        D["n"]=self.n
+        D["name"]=self.name
+        D["w"]=self.w
+        return str(D)
 

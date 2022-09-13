@@ -4,7 +4,7 @@ from Sym import Sym
 from the import the
 from Data import Data
 from Cols import Cols
-from read_csv import read_csv
+from read_csv import csv
 
 
 def test_the():
@@ -42,19 +42,19 @@ def test_bigNum():
 row={}
 
 def test_csv():
-    t=the.config()
-    read_csv(t.file, csv_test(t.row))
+    t=the().config()
+    csv(t["file"], lambda row:oo(row))
     assert True
 
-def test_data(d):
-    d = Data(the.config().file)
-    for s,c in d.cols.y: oo(c)
+def test_data():
+    d = Data(the().config()["file"])
+    for c in d.cols.y.values(): oo(c)
     assert True
 
-def test_stats(data):
-    data = Data(the.config().file)
-    print("xmid", o( data.stats(2, data.cols.x, "mid")))
-    print("xdiv", o( data.stats(3, data.cols.x, "div")))
-    print("ymid", o( data.stats(2, data.cols.y, "mid")))
-    print("ydiv", o( data.stats(3, data.cols.y, "div")))
+def test_stats():
+    data = Data(the().config()["file"])
+    print("xmid", o( data.stats(2, data.cols.x, lambda col:col.mid())))
+    print("xdiv", o( data.stats(3, data.cols.x, lambda col:col.div())))
+    print("ymid", o( data.stats(2, data.cols.y, lambda col:col.mid())))
+    print("ydiv", o( data.stats(3, data.cols.y, lambda col:col.div())))
     assert True

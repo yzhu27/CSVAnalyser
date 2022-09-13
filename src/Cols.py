@@ -7,7 +7,7 @@ from Num import Num
 # line 62
 # add x to t, return x
 def push(t, x):
-    t[len(x)] = x
+    t[len(t)] = x
     return x
 class Cols:
     def __init__(self, names):
