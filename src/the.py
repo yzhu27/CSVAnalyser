@@ -1,6 +1,3 @@
-
-
-import imp
 import re
 from util_fun import coerce
 
