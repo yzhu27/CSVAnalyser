@@ -18,21 +18,32 @@ class Cols:
         self.y = {}
         
         for index, name in enumerate(names):
+            # all columns should be recorded in self.all, including those skipped columns
+            # if the column starts with a capital character, it is Num
+            # otherwise, it is Sym
             if name.istitle():
                 curCol = push(self.all, Num(index, name))
             else:
                 curCol = push(self.all, Sym(index, name))    
             
             # lenOfName = len(name)
+            
+            # if a column ends with a ':', the column should be skipped and recorded nowhere except self.all
+            
+            # if there is any '+' or '-', the column should be regarded as a dependent variable
+            # all dependent variables should be recoreded in self.y
+            # on the contrary, those independent variables should be recorded in self.x
             if name[-1] != ":":
-                if "+" in name:
+                if "+" in name or "-" in name:
                     push(self.y, curCol)
-                elif "-" in name:
+                else:
                     push(self.x, curCol)
                 
-                if name[-1] == ":":
+                # if a column name ends with a '!', this column should be recorded AS self.klass
+                # NOTICE THAT IT IS "AS", NOT "INCLUDED IN"
+                if name[-1] == "!":
                     self.klass = name
-   
+
     # following constructor is written by WPX, commented by HJY
     def initTest(self, csv):
         self.names = csv.titles # all column names        
