@@ -1,4 +1,7 @@
 import copy
+import Cols
+from Row import Row
+'''
 class Col:
     names = {}
     all = {}
@@ -21,13 +24,15 @@ class Col:
                 self.y[name] = csv.get_colum_by_index_with_skipped(name)
             else:
                 self.klass[name] = csv.get_colum_by_index_with_skipped(name)
-
+'''
 class Data:
     def __init__(self, filename):
         csv = Csv()
         csv.read_csv(filename)
-        self.cols = Col(csv)
-        # para1: x or y, # para2: mid or div
+        self.cols = Cols(csv)
+        self.rows = Row()
+
+     # para1: x or y, # para2: mid or div
     def stats(self,places,para1,para2):
         col = self.cols
 
@@ -41,6 +46,18 @@ class Data:
                 return 'x_mid'
             elif para2 == 'div':
                 return 'x_div'
+
+def csv(fname,fun,sep,src,s,t):
+    src = open(fname)
+    while True:
+        s = src.readline()
+        if s is None:
+            return src.close()
+        else:
+            t = {}
+            for s1 in s.split(sep):
+                t[len[t]] = s1
+            fun(t)
 class Csv:
     cols = {}
     rows = {}
@@ -51,6 +68,14 @@ class Csv:
         cols = {}
         rows = {}
         row_skip_index = set()
+    def read_csv(self,filename,fun,sep,t):
+        file = open(filename)
+        line = file.readline()
+        fun(t.row)
+        while line:
+            line.strip()
+            strs = line.split(sep)
+            line = file.readline()
     def read_csv(self,filename):
         file = open(filename)
         line = file.readline()
@@ -105,11 +130,11 @@ class Csv:
             else:
                 result.append(self.rows[index][i])
         return result
+
 if __name__ == "__main__":
     csv = Csv()
     csv.read_csv(r"C:\Users\Pinxiang Wang\Documents\PythonFileTransfer.csv")
-
-    col = Col(csv)
+    col = Cols(csv)
 
     print('Elements in cols Clndrs: ',csv.cols['Clndrs'])  # select one col by col name(title)
     print(csv.cols['origin'][20])  # select specific element by col name and row number
