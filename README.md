@@ -1,6 +1,7 @@
 # CSV-Analyser
 
 ![Build test](https://img.shields.io/github/workflow/status/yzhu27/CSV-Analyser/Python%20package)
+
 Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
 This repository is intended to read a CSV file and generate summaries of both numeric and symbolic columns, that is, medians and standard deviation for numeric columns, and mode and entropy for symbolic columns.
