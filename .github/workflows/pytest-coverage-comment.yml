@@ -21,13 +21,13 @@ jobs:
 
       - name: Build coverage file
         run: |
-          pytest --junitxml=pytest.xml --cov=app tests/ | tee pytest-coverage.txt
+          pytest --junitxml=pytest.xml --cov=app tests/ | tee ./data/pytest-coverage.txt
 
       - name: Pytest coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
+          pytest-coverage-path: ./data/pytest-coverage.txt
+          junitxml-path: ./data/pytest.xml
       
       - name: Check the output coverage
         run: |
