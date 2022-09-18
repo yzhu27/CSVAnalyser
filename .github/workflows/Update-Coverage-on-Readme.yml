@@ -2,7 +2,7 @@ name: Update Coverage on Readme
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - '**/README.md'
 jobs:
