@@ -1,14 +1,7 @@
-from logging import NullHandler
-import copy
+from src.Sym import Sym
+from src.Num import Num
+from src.utils import push
 
-from Sym import Sym
-from Num import Num
-
-# line 62
-# add x to t, return x
-def push(t, x):
-    t[len(t)] = x
-    return x
 class Cols:
     def __init__(self, names):
         self.names = names

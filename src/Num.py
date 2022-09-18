@@ -7,7 +7,7 @@ import math
 # import random for randomly delete an element once the room is full
 import random
 
-from the import the
+from src.the import the
 
 
 # line 59 function per(t, p)

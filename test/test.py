@@ -1,10 +1,11 @@
-from util_fun import o,oo
-from Num import Num
-from Sym import Sym
-from the import the
-from Data import Data
-from Cols import Cols
-from read_csv import csv
+
+from src.utils import o, oo, print_counter
+from src.Num import Num
+from src.Sym import Sym
+from src.the import the
+from src.Data import Data
+from src.Cols import Cols
+from src.csv import csv
 import random
 
 
@@ -94,16 +95,10 @@ def test_bignum():
     oo(list(num.nums().values()))
     return len(num._has) == 32
 
-row={}
-n=0
-def printer(row):
-    global n
-    if n <= 10:
-        oo(list(row.values()))
-        n+=1
+
 
 def test_csv():
-    csv(the().config()["file"], lambda row:printer(row))
+    csv(the().config()["file"], lambda row:print_counter(row))
     return True
 
 def test_data():

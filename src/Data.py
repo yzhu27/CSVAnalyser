@@ -1,13 +1,11 @@
-import math
 
-from Cols import Cols, push
-from Row import Row
-from read_csv import csv
-from Num import Num
 
-def rnd(x,places):
-    mult = pow(10,(places or 2))
-    return math.floor(x * mult +0.5)/mult
+from src.Cols import Cols, push
+from src.Row import Row
+from src.csv import csv
+from src.Num import Num
+from src.utils import rnd
+
 
 class Data:
     def add(self,xs):

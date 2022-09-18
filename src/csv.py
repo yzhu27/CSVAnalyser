@@ -1,9 +1,6 @@
-import copy
-import Cols
-from Row import Row
-from the import the
+from src.the import the
 from csv import reader
-from util_fun import coerce
+from src.utils import coerce
 # t is the parameter of 'fun'.
 
 def csv(fname, fun):

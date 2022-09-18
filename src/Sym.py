@@ -54,10 +54,3 @@ class Sym:
                 entropy = entropy - p * math.log(p,2)
         return entropy
 
-
-    def __str__(self):
-        D={}
-        D["at"]=self.at
-        D["n"]=self.n
-        D["name"]=self.name
-        return str(D)

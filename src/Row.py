@@ -1,15 +1,4 @@
-def copydic(t):
-    """
-    For dictionary t, return the deep copy of t; otherwise return t.
-    """
-
-    if ~isinstance(t,dict):
-        return t
-    u = {}
-    for k in t:
-        u[k] = copydic(t[k])
-    return u
-
+from src.utils import  copydic
     
     
 class Row:
