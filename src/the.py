@@ -58,17 +58,17 @@ class the:
  
         
 
-#main() function for unit test
-def main():
-    The = the()
-    t = The.config()
-    print(t)
-    The.cli(t)
-    print(t)
+# #main() function for unit test
+# def main():
+#     The = the()
+#     t = The.config()
+#     print(t)
+#     The.cli(t)
+#     print(t)
     
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
 
              

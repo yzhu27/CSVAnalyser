@@ -43,9 +43,3 @@ class Data:
             v = type(v) == type(0) and rnd(v,places) or v
             t[col.name] = v
         return t
-
-if __name__ == '__main__':
-    data = Data(r"../data/auto93.csv")
-    #print(data.csv_obj.titles)
-    print(data.cols.x)
-    print(data.cols.y)

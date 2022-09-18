@@ -51,6 +51,7 @@ def test_LS():
     return True
 
 def test_ALL():
+    global fails
     for k in test_LIST():
         if k != "ALL":
             print("\n-----------------------")
@@ -97,7 +98,7 @@ row={}
 n=0
 def printer(row):
     global n
-    if n < 11:
+    if n <= 10:
         oo(list(row.values()))
         n+=1
 

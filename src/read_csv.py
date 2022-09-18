@@ -19,38 +19,38 @@ def csv(fname, fun):
             #print(d)
             fun(d)
 
-    # while True:
-    #     s = src.readline()
-    #     s = s[:-1]
-    #     if s is None:
-    #         return src.close()
-    #     else:
-    #         t = {}
-    #         for s1 in s.split(sep):
-    #             t[len(t)+1] = s1
-    #         fun(t)
-class Col:
-    names = {}
-    all = {}
-    x = {}
-    y = {}
-    klass = {}
-    names_index_mapping = {}
-    def __init__(self,csv):
-        self.names = csv.titles
-        self.all = csv.cols
-        index = 0
-        for name in self.names:
-            self.names_index_mapping[index] = name
-            index = index+1
-            if name in csv.cols_skip_index:
-                continue
-            elif name[len(name)-1]=='+':
-                self.x[name] = csv.get_colum_by_index_with_skipped(name)
-            elif name[len(name)-1]=='-':
-                self.y[name] = csv.get_colum_by_index_with_skipped(name)
-            else:
-                self.klass[name] = csv.get_colum_by_index_with_skipped(name)
+#     # while True:
+#     #     s = src.readline()
+#     #     s = s[:-1]
+#     #     if s is None:
+#     #         return src.close()
+#     #     else:
+#     #         t = {}
+#     #         for s1 in s.split(sep):
+#     #             t[len(t)+1] = s1
+#     #         fun(t)
+# class Col:
+#     names = {}
+#     all = {}
+#     x = {}
+#     y = {}
+#     klass = {}
+#     names_index_mapping = {}
+#     def __init__(self,csv):
+#         self.names = csv.titles
+#         self.all = csv.cols
+#         index = 0
+#         for name in self.names:
+#             self.names_index_mapping[index] = name
+#             index = index+1
+#             if name in csv.cols_skip_index:
+#                 continue
+#             elif name[len(name)-1]=='+':
+#                 self.x[name] = csv.get_colum_by_index_with_skipped(name)
+#             elif name[len(name)-1]=='-':
+#                 self.y[name] = csv.get_colum_by_index_with_skipped(name)
+#             else:
+#                 self.klass[name] = csv.get_colum_by_index_with_skipped(name)
 
 
 '''

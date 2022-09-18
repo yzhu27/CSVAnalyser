@@ -15,7 +15,7 @@ def oo(d):
 def coerce(s):
     def fun(s1):
         if s1 == 'true':
-            return True 
+            return True
         if s1 == 'false':
             return False 
         return s1.strip()
