@@ -17,16 +17,20 @@ tests/test_engine.py:42: KeyError
 ----- generated xml file: /home/yzhu63/csc510/hm2/CSV-Analyser/pytest.xml ------
 
 ----------- coverage: platform linux, python 3.6.9-final-0 -----------
-Name           Stmts   Miss  Cover   Missing
---------------------------------------------
-src/Cols.py       20      1    95%   38
-src/Data.py       30      2    93%   32-33
-src/utils.py      53     19    64%   18, 37-40, 55-75
---------------------------------------------
-TOTAL            215     22    90%
-
-6 files skipped due to complete coverage.
+Name              Stmts   Miss  Cover
+-------------------------------------
+src/Cols.py          20      1    95%
+src/Data.py          30      2    93%
+src/Num.py           53      0   100%
+src/Row.py            6      0   100%
+src/Sym.py           27      0   100%
+src/__init__.py       0      0   100%
+src/csv.py           13      0   100%
+src/the.py           13      0   100%
+src/utils.py         53     19    64%
+-------------------------------------
+TOTAL               215     22    90%
 
 =========================== short test summary info ============================
 FAILED tests/test_engine.py::test_BAD - KeyError: 'none'
-========================= 1 failed, 10 passed in 0.09s =========================
+========================= 1 failed, 10 passed in 0.10s =========================
