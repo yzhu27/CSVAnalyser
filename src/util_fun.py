@@ -1,7 +1,7 @@
 
 
 def o(d):
-    return str(d).replace(":", "").replace(",", ":").replace("'", "")
+    return str(d).replace("[","{").replace("]","}").replace("'", "")
 
 
 def oo(d):
