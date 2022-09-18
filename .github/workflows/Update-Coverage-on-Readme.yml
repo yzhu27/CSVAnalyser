@@ -1,6 +1,8 @@
 name: Update Coverage on Readme
 on:
   push:
+    paths-ignore:
+      - '**/README.md'
 jobs:
   update-coverage-on-readme:
     runs-on: ubuntu-latest
