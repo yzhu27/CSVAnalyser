@@ -22,7 +22,7 @@ jobs:
         uses: MishaKav/pytest-coverage-comment@main
         with:
           hide-comment: true
-          pytest-coverage-path: ./pytest-coverage.txt
+          pytest-coverage-path: ./data/pytest-coverage.txt
           
           
       - name: Create Variable of Summary Report
