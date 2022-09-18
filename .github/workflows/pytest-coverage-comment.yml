@@ -21,13 +21,13 @@ jobs:
 
       - name: Build coverage file
         run: |
-          pytest --junitxml=pytest.xml --cov=app tests/ | tee ./data/pytest-coverage.txt
+          pytest --junitxml=pytest.xml --cov=app tests/ | tee ./pytest-coverage.txt
 
       - name: Pytest coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-coverage-path: ./data/pytest-coverage.txt
-          junitxml-path: ./data/pytest.xml
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
       
       - name: Check the output coverage
         run: |
@@ -45,9 +45,6 @@ jobs:
           echo "Coverage Time - ${{ steps.coverageComment.outputs.time }}"
           echo "Not Success Test Info - ${{ steps.coverageComment.outputs.notSuccessTestInfo }}"
   
-  update-coverage-on-readme:
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v3
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
