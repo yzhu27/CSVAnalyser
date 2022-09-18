@@ -21,7 +21,6 @@ jobs:
         with:
           hide-comment: true
           pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
           
           
       - name: Create Variable of Summary Report
