@@ -4,7 +4,6 @@ from src.Num import Num
 from src.Sym import Sym
 from src.the import the
 from src.Data import Data
-from src.Cols import Cols
 from src.csv import csv
 import random
 

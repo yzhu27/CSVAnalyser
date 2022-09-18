@@ -1,6 +1,6 @@
-from test import test
+from tests import test_engine
 
 
 if __name__ == '__main__':
-    test.runs("ALL")
-    exit(test.fails)
+    test_engine.runs("ALL")
+    exit(test_engine.fails)

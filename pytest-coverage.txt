@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/yzhu63/csc510/hm2/CSV-Analyser
+plugins: cov-3.0.0
+collected 11 items
+
+tests/test_engine.py F..........                                         [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_BAD ___________________________________
+
+    def test_BAD():
+>       print(eg["none"])
+E       KeyError: 'none'
+
+tests/test_engine.py:42: KeyError
+----- generated xml file: /home/yzhu63/csc510/hm2/CSV-Analyser/pytest.xml ------
+
+----------- coverage: platform linux, python 3.6.9-final-0 -----------
+Name           Stmts   Miss  Cover   Missing
+--------------------------------------------
+src/Cols.py       20      1    95%   38
+src/Data.py       30      2    93%   32-33
+src/utils.py      53     19    64%   18, 37-40, 55-75
+--------------------------------------------
+TOTAL            215     22    90%
+
+6 files skipped due to complete coverage.
+
+=========================== short test summary info ============================
+FAILED tests/test_engine.py::test_BAD - KeyError: 'none'
+========================= 1 failed, 10 passed in 0.09s =========================
