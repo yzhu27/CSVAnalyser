@@ -1,6 +1,7 @@
 # CSV-Analyser
 
 ![Build test](https://img.shields.io/github/workflow/status/yzhu27/CSVAnalyser/Update%20Coverage%20on%20Readme)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7093577.svg)](https://doi.org/10.5281/zenodo.7093577)
 
 Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
