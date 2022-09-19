@@ -1,5 +1,11 @@
 # CSV-Analyser
 
+![Build test](https://img.shields.io/github/workflow/status/yzhu27/CSVAnalyser/Update%20Coverage%20on%20Readme)
+![MIT license](https://img.shields.io/github/license/yzhu27/CSVAnalyser)
+![GitHub top language](https://img.shields.io/github/languages/top/yzhu27/CSVAnalyser)
+![GitHub contributors](https://img.shields.io/github/contributors/yzhu27/CSVAnalyser)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7093577.svg)](https://doi.org/10.5281/zenodo.7093577)
+
 Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
 This repository is intended to read a CSV file and generate summaries of both numeric and symbolic columns, that is, medians and standard deviation for numeric columns, and mode and entropy for symbolic columns.
