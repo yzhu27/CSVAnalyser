@@ -55,7 +55,7 @@ def test_ALL():
     for k in test_LIST():
         if k != "ALL":
             print("\n-----------------------")
-            if not runs(k):
+            if runs(k) is not True:
                 fails+=1
     return True
             
