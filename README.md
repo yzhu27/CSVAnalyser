@@ -10,42 +10,43 @@ Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
 This project is intended to read and analyze CSV files. Based on the example source code written in LUA, we implemented multiple functions in Python as listed below.
 
+
 ## Functions
 
-$\bullet$ Read CSV
+Read CSV
 
-Import the input file to a dictionary line by line, separated by given separator.
+- Import the input file to a dictionary line by line, separated by given separator.
 
-- CLI
+CLI
 
-Update information through command line. Help string would be printed if run "-h".
+- Update information through command line. Help string would be printed if run "-h".
 
-- Generate Statistical Summaries
+Generate Statistical Summaries
 
-This function is for column data. For each column, the data is either numeric (which denoted with a leading upper case letter) or symbolic (which denoted with a leading lower case letter). Employ different statistical variebles to describe both types of data.
+- This function is for column data. For each column, the data is either numeric (which denoted with a leading upper case letter) or symbolic (which denoted with a leading lower case letter). Employ different statistical variebles to describe both types of data.
 
 
 To suppot these functions, we defined 5 classes.
 
-# Class
+## Class
 
-## Cols
+Cols
 
-Record column names and variables, differentiating dependent variables and independent variables by leading letters of column names.
+- Record column names and variables, differentiating dependent variables and independent variables by leading letters of column names.
 
-## Rows
+Rows
 
-Record data by row.
+- Record data by row.
 
-## Num
+Num
 
-Num class is for calculating features of numeric data. Methods of add, mid and div are included, among which mid is stand for the middle value of the sorted data, while div means standard deviation of this column of numbers.
+- Num class is for calculating features of numeric data. Methods of add, mid and div are included, among which mid is stand for the middle value of the sorted data, while div means standard deviation of this column of numbers.
 
-## Sym
+Sym
 
-Sym class is for calculating features of symbolic data. Methods of add, mid and div are included, among which mid represents the most common symbol in the set; div is the entropy of these symbols.
+- Sym class is for calculating features of symbolic data. Methods of add, mid and div are included, among which mid represents the most common symbol in the set; div is the entropy of these symbols.
 
-## Data
+Data
 
 
 Test coverage is as below:
