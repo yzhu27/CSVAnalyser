@@ -6,7 +6,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/yzhu27/CSVAnalyser)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7093577.svg)](https://doi.org/10.5281/zenodo.7093577)
 
-**Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!**
+## Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
 This project is intended to read and analyze CSV files. Based on the example source code written in LUA, we implemented multiple functions in Python as listed below. To suppot these functions, we defined 5 classes, which is also listed below.
 
