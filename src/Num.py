@@ -30,9 +30,8 @@ class Num:
         self.hi = -math.inf # highest seen
         self.isSorted = True # no updates since last sort of data
         self.w = 1 # not yet
-        
-        THE = the()     
-        self.the = THE.config() 
+         
+        self.the = the
     
     # line 178 function Num:add(v,    pos)
     def nums(self):

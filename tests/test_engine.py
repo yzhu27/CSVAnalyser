@@ -14,10 +14,10 @@ def runs(k):
     global eg
     if k not in eg.keys():
         return
-    random.seed(the().config()["seed"])
+    random.seed(the["seed"])
     old=eg.copy()
     out = 3
-    if the().config()["dump"]:
+    if the["dump"]:
         out = eg[k]()
         status = True
     else: 
@@ -63,7 +63,7 @@ def test_ALL():
 
 
 def test_the():
-    oo(the().config())
+    oo(the)
     return True
 
 
@@ -88,25 +88,27 @@ def test_sym():
     return mode == "a" and 1.37 <= entropy and entropy <=1.38
 
 def test_bignum():
+    tmp = the["nums"]
     num = Num()
-    num.the["nums"] = 32
+    the["nums"] = 32
     for i in range(1, 1000): num.add(i)
     oo(list(num.nums().values()))
+    the["nums"]=tmp
     return len(num._has) == 32
 
 
 
 def test_csv():
-    csv(the().config()["file"], lambda row:print_counter(row))
+    csv(the["file"], lambda row:print_counter(row))
     return True
 
 def test_data():
-    d = Data(the().config()["file"])
+    d = Data(the["file"])
     for c in d.cols.y.values(): oo(c)
     return True
 
 def test_stats():
-    data = Data(the().config()["file"])
+    data = Data(the["file"])
     print("xmid", o( data.stats(2, data.cols.x, lambda col:col.mid())))
     print("xdiv", o( data.stats(3, data.cols.x, lambda col:col.div())))
     print("ymid", o( data.stats(2, data.cols.y, lambda col:col.mid())))
