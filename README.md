@@ -10,17 +10,17 @@ Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
 This project is intended to read and analyze CSV files. Based on the example source code written in LUA, we implemented multiple functions in Python as listed below.
 
-# Functions
+## Functions
 
-## Read CSV
+-Read CSV
 
 Import the input file to a dictionary line by line, separated by given separator.
 
-## CLI
+-CLI
 
 Update information through command line. Help string would be printed if run "-h".
 
-## Generate Statistical Summaries
+-Generate Statistical Summaries
 
 This function is for column data. For each column, the data is either numeric (which denoted with a leading upper case letter) or symbolic (which denoted with a leading lower case letter). Employ different statistical variebles to describe both types of data.
 
