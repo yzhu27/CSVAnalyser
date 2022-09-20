@@ -8,7 +8,7 @@
 
 ## Welcome to Group 7's repository for 22 fall Software Engineering homework 2 & 3!
 
-This project is intended to read and analyze CSV files. Based on the example source code written in LUA, we implemented multiple functions in Python as listed below. To suppot these functions, we defined 5 classes, which is also listed below.
+This project is intended to read and analyze CSV files. Based on the example source code written in LUA, we implemented multiple functions in Python as listed below. To suppot these functions, we defined 5 classes with specific methods as described below.
 
 
 ## Functions
