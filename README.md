@@ -13,12 +13,12 @@ This project is intended to read and analyze CSV files. Based on the example sou
 
 ## Functions
 
-** Read CSV **
+**Read CSV**
 
 - Import the input file to a dictionary line by line, separated by given separator.
 
 
-** CLI **
+**CLI**
 
 - Update information through command line. Help string would be printed if run "-h".
 
