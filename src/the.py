@@ -12,10 +12,8 @@ def config(the):
     return the
 
 #Update settings from values on command-line flags. Booleans need no values
-def cli(t):
-    tmp = input()
-    #store the input command
-    slots = list(tmp.split())
+def cli(t , list):
+    slots = list[1:]
     #search the key and value we want to update
     for slot , v in t.items():            
         #give each imput slot an index(begin from 0)
