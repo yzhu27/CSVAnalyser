@@ -10,6 +10,12 @@
 
 This project is intended to read and analyze CSV files. Based on the example source code written in LUA, we implemented multiple functions in Python as listed below. To suppot these functions, we defined 5 classes with specific methods as described below.
 
+## Installation
+
+- 'git clone https://github.com/yzhu27/CSVAnalyser.git'
+- 'python main.py'
+
+*Notice: run the main.py in the root directory directly.
 
 ## Functions
 
