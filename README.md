@@ -18,7 +18,7 @@ cd ./CSVAnalyser
 python ./main.py -e ALL
 ```
 
-* Notice: run `main.py` in the root directory directly.
+*Notice: run `main.py` in the root directory directly.
 
 ## Functions
 
