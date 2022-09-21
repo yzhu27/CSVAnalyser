@@ -12,8 +12,8 @@ This project is intended to read and analyze CSV files. Based on the example sou
 
 ## Installation
 
-- 'git clone https://github.com/yzhu27/CSVAnalyser.git'
-- 'python main.py'
+- `git clone https://github.com/yzhu27/CSVAnalyser.git`
+- `python main.py`
 
 *Notice: run the main.py in the root directory directly.
 
