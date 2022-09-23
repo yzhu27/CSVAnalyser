@@ -4,7 +4,7 @@ from src.Num import Num
 from src.Sym import Sym
 from src.the import the
 from src.Data import Data
-from src.Csv import csv
+from src.Csv import Csv
 import random
 
 
@@ -99,7 +99,7 @@ def test_bignum():
 
 
 def test_csv():
-    csv(the["file"], lambda row:print_counter(row))
+    Csv(the["file"], lambda row:print_counter(row))
     return True
 
 def test_data():

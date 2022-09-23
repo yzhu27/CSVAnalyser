@@ -3,7 +3,7 @@ import csv
 from src.utils import coerce
 # t is the parameter of 'fun'.
 
-def csv(fname, fun):
+def Csv(fname, fun):
     sep = the["seperator"]
     
     #src = open(fname)

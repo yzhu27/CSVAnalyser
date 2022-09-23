@@ -2,7 +2,7 @@
 
 from src.Cols import Cols, push
 from src.Row import Row
-from src.Csv import csv
+from src.Csv import Csv
 from src.Num import Num
 from src.utils import rnd
 
@@ -27,7 +27,7 @@ class Data:
         self.cols = None
         self.rows = {}
         if type(src)==type('string'):
-            csv(src,lambda row:self.add(row))
+            Csv(src,lambda row:self.add(row))
         else:
             for _,row in enumerate(src or {}):
                 self.add(row)
