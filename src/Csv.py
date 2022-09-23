@@ -1,5 +1,5 @@
 from src.the import the
-from csv import reader
+import csv
 from src.utils import coerce
 # t is the parameter of 'fun'.
 
@@ -8,7 +8,7 @@ def csv(fname, fun):
     
     #src = open(fname)
     with open(fname,'r') as src:
-        rdr = reader(src, delimiter=sep)
+        rdr = csv.reader(src, delimiter=sep)
         for l in rdr:
             d={}
             for v in l:
