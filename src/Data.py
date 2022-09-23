@@ -2,7 +2,7 @@
 
 from src.Cols import Cols, push
 from src.Row import Row
-from src.csv import csv
+from src.Csv import csv
 from src.Num import Num
 from src.utils import rnd
 
