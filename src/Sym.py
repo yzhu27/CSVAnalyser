@@ -47,10 +47,12 @@ class Sym:
         Calculate entropy of the symbolic column.
         """
         
+        #edited by Lognam, but still cannot get the correct result at the present
         entropy = 0
         for key in self.has:
-            if self.n != 0:
-                p = self.has[key] / self.n
-                entropy = entropy - p * math.log(p,2)
+            if key > 0:
+                p = key / self.n
+                funP = p * math.log(p,2)
+                entropy = entropy - funP
         return entropy
 

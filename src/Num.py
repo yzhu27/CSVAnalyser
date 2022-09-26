@@ -35,9 +35,23 @@ class Num:
     
     # line 178 function Num:add(v,    pos)
     def nums(self):
+        # notice that dictionary cannot be sorted in Python
+        # before sorted, self._has = [a, b, c], where a/b/c are numerical elements
+        # and index is from 0-len, just representing the position in the dictionary
+        # but not in the ascending/descending order
+        
+        # we may use a list "hasList" to store the ascending order, 
+        # based on comparision of value, not index
         if self.isSorted == False:
-            sorted(self._has.items(), key = lambda dc:(dc[1], dc[0]))
-            self.isSorted == True
+            hasList = sorted(self._has.items(), key = lambda dc:(dc[1], dc[0]))
+            
+            index = 0
+            
+            for key, value in hasList:
+                self._has[index] = value
+                index += 1
+            
+            self.isSorted = True
         return self._has
     
     # line 182 function Num:add(v,    pos)
